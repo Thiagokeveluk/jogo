@@ -7,13 +7,18 @@ const recordeSpan = document.getElementById('recorde');
 const gameOverText = document.querySelector('.game-over');
 const restartButton = document.querySelector('.restart');
 
+let jogoAtivo = true;
 let tempo = 0;
 let recorde = localStorage.getItem('recorde') || 0;
 recordeSpan.textContent = recorde;
 
+
+
 let cronometro = setInterval(() => {
+    if(jogoAtivo){
     tempo++;
     tempoSpan.textContent = tempo;
+    }
 }, 900);
 
 
@@ -27,7 +32,6 @@ const jump = () => {
 
 const loop = setInterval(() => {
 
-    console
     const pipePosition = pipe.offsetLeft;
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
 
@@ -48,6 +52,7 @@ const loop = setInterval(() => {
 
 
        clearInterval(loop);
+       jogoAtivo = false;
        clearInterval(cronometro);
 
        if( tempo > recorde) {
