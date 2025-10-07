@@ -1,23 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="JOGO.css">
-    <script src="script.js" defer></script>
-
-    <title>Mario Jump</title>
-</head>
-<body>
-    
-    <div class="game-board">
-        <img src="img/mario.gif" class="mario">
-        <img src="img/pipe.png" class="pipe">
-    
-    </div>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -27,12 +10,20 @@
   <title>Mario Jump</title>
 
 </head>
-<body>
-   
+
   <div class="game-board">
+    <img src="img/clouds.png" class="clouds2">
+    <img src="img/clouds.png" class="clouds">
     <img src="img/mario.gif" class="mario">
     <img src="img/pipe.png" class="pipe">
-  </div>
+
+     <div class="scoreboard">
+    <p>Tempo: <span id="tempo">0</span>s</span></p>
+    <p>Recorde: <span id="recorde">0</span>s</p>
+  </div> 
+</div>
+
+<button onclick="location.reload()" class="restart">Reiniciar</button>
 
 
 </body>

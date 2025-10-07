@@ -4,6 +4,9 @@ const pipe = document.querySelector('.pipe');
 const tempoSpan = document.getElementById('tempo');
 const recordeSpan = document.getElementById('recorde');
 
+const gameOverText = document.querySelector('.game-over');
+const restartButton = document.querySelector('.restart');
+
 let tempo = 0;
 let recorde = localStorage.getItem('recorde') || 0;
 recordeSpan.textContent = recorde;
@@ -39,6 +42,9 @@ const loop = setInterval(() => {
        mario.src ='./img/game-over.png';
        mario.style.width ='70px';
        mario.style.marginLeft = '60px';
+
+       gameOverText.style.display = 'block';
+       restartButton.style.display = 'block';
 
 
        clearInterval(loop);
